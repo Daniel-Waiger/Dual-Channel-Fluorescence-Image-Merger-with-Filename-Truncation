@@ -11,7 +11,7 @@ macro "Merge GFP and RFP Images With Filename Modification" {
     list = getFileList(inputDir);
     greenList = newArray();
     redList = newArray();
-    setBatchMode(false);
+    setBatchMode(true);
 
     // Log and separate files into green and red lists
     print("Complete File List:");
@@ -44,10 +44,19 @@ macro "Merge GFP and RFP Images With Filename Modification" {
     // Merge corresponding images
     for (l = 0; l < greenList.length; l++) {
         open(inputDir + greenList[l]);
-        // Remove the first four characters from the file name of the green image
+        // Set image properties
+        pixelWidth = 0.6192967; // Pixel width in microns
+        pixelHeight = 0.6192967; // Pixel height in microns
+        run("Properties...", "channels=1 slices=1 frames=1 pixel_width=" + pixelWidth + " pixel_height=" + pixelHeight + " voxel_depth=1");
+        Stack.setXUnit("um"); // Remove the first four characters from the file name of the green image
         baseName = getTitle(); // Gets the title of the currently active image (merged image)
         modifiedName = substring(baseName, 4); // Removes the first four characters
         open(inputDir + redList[l]);
+        // Set image properties
+        pixelWidth = 0.6192967; // Pixel width in microns
+        pixelHeight = 0.6192967; // Pixel height in microns
+        run("Properties...", "channels=1 slices=1 frames=1 pixel_width=" + pixelWidth + " pixel_height=" + pixelHeight + " voxel_depth=1");
+        Stack.setXUnit("um");
         run("Merge Channels...", "c1=[" + redList[l] + "] c2=[" + greenList[l] + "] create keep");
 		wait(100);
 
