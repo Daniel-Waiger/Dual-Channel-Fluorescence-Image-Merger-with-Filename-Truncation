@@ -8,7 +8,7 @@ Developed by Daniel Waiger from the Bio-imaging & Flow Cytometry Core Facility a
 
 ## Installation
 
-1. Ensure you have [ImageJ](https://fiji.sc) installed.
+1. Ensure you have [Fiji/ImageJ](https://fiji.sc) installed.
 2. Download the macro file from this repository.
 3. Open ImageJ, navigate to `Plugins > Macros > Run Macro`, and select the downloaded file.
 
