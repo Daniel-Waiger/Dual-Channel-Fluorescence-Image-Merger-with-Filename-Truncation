@@ -16,7 +16,7 @@ Developed by Daniel Waiger from the Bio-imaging & Flow Cytometry Core Facility a
 
 ### Running the Macro
 
-1. **Start the Macro**: Run the macro in ImageJ. Either by drag-and-drop of the '.ijm' file, or by opening it through the 'Open...' dialog.
+1. **Start the Macro**: Run the macro in ImageJ. Either by a drag-and-drop of the '.ijm' file, or by opening it through the 'Open...' dialog.
 2. **Select the Directory**: A dialog will prompt you to choose the directory containing your `.TIF` files.
 
 ### What Happens Next: Step-by-Step Process
